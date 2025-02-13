@@ -40,16 +40,17 @@
     <meta property="og:image:type" content="image/png" />
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Begin translate script-->
-    <script>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'pl,ru,es,de',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-      }
-    </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({
+				pageLanguage: 'en',
+				includedLanguages: 'pl,ru,es,de',
+				layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+			}, 'google_translate_element');
+		}
+	</script>
+	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <!-- End translate script-->
     <script type="application/ld+json" class="yoast-schema-graph">
       {
@@ -969,15 +970,26 @@
 	<script>
 		function translateLanguage() {
 			var selectedLanguage = document.getElementById("languageDropdown").value;
-			var interval = setInterval(() => {
-				var googleTranslateDropdown = document.querySelector(".goog-te-combo");
-				if (googleTranslateDropdown) {
-					googleTranslateDropdown.value = selectedLanguage;
-					googleTranslateDropdown.dispatchEvent(new Event("change"));
-					clearInterval(interval);
-				}
-			}, 500); // Checks every 500ms until Google Translate is ready
+			var googleTranslateDropdown = document.querySelector(".goog-te-combo");
+
+			if (!googleTranslateDropdown) {
+				console.error("Google Translate dropdown not found. Ensure the Translate script has loaded.");
+				return;
+			}
+
+			googleTranslateDropdown.value = selectedLanguage;
+			googleTranslateDropdown.dispatchEvent(new Event("change"));
 		}
+
+		// Wait for Google Translate to load before enabling the dropdown
+		window.addEventListener("load", function () {
+			setTimeout(() => {
+				if (!document.querySelector(".goog-te-combo")) {
+					console.error("Google Translate not loaded. It might be blocked by a browser extension.");
+				}
+			}, 3000);
+		});
+
 	</script>
 
   </body>
