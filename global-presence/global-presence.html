@@ -969,12 +969,14 @@
 	<script>
 		function translateLanguage() {
 			var selectedLanguage = document.getElementById("languageDropdown").value;
-			var googleTranslateDropdown = document.querySelector(".goog-te-combo");
-
-			if (googleTranslateDropdown) {
-				googleTranslateDropdown.value = selectedLanguage;
-				googleTranslateDropdown.dispatchEvent(new Event("change"));
-			}
+			var interval = setInterval(() => {
+				var googleTranslateDropdown = document.querySelector(".goog-te-combo");
+				if (googleTranslateDropdown) {
+					googleTranslateDropdown.value = selectedLanguage;
+					googleTranslateDropdown.dispatchEvent(new Event("change"));
+					clearInterval(interval);
+				}
+			}, 500); // Checks every 500ms until Google Translate is ready
 		}
 	</script>
 
