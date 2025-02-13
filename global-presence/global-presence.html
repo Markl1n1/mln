@@ -51,6 +51,22 @@
 	</script>
 	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+	<script>
+		function loadGoogleTranslate() {
+			if (!document.querySelector('script[src*="translate.google.com/translate_a/element.js"]')) {
+				let script = document.createElement("script");
+				script.type = "text/javascript";
+				script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+				document.head.appendChild(script);
+			}
+		}
+
+		// Load Google Translate script if not already loaded
+		window.onload = function() {
+			loadGoogleTranslate();
+		};
+
+	</script>
     <!-- End translate script-->
     <script type="application/ld+json" class="yoast-schema-graph">
       {
