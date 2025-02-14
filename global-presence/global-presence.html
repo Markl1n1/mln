@@ -15,7 +15,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="author" href="../wp-content/themes/mlp/humans.txt" />
+    <link rel="author" href="https://mln.finance/wp-content/themes/mlp/humans.txt" />
     <link rel="pingback" href="https://mln.finance/xmlrpc.php" />
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <style>
@@ -39,35 +39,7 @@
     <meta property="og:image:height" content="675" />
     <meta property="og:image:type" content="image/png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <!-- Begin translate script-->
-	<script type="text/javascript">
-		function googleTranslateElementInit() {
-			new google.translate.TranslateElement({
-				pageLanguage: 'en',
-				includedLanguages: 'pl,ru,es,de',
-				layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-			}, 'google_translate_element');
-		}
-	</script>
-	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-	<script>
-		function loadGoogleTranslate() {
-			if (!document.querySelector('script[src*="translate.google.com/translate_a/element.js"]')) {
-				let script = document.createElement("script");
-				script.type = "text/javascript";
-				script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-				document.head.appendChild(script);
-			}
-		}
-
-		// Load Google Translate script if not already loaded
-		window.onload = function() {
-			loadGoogleTranslate();
-		};
-
-	</script>
-    <!-- End translate script-->
+   
     <script type="application/ld+json" class="yoast-schema-graph">
       {
         "@context": "https://schema.org",
@@ -166,9 +138,9 @@
         text-decoration: none
       }
     </style>
-    <link rel='stylesheet' id='contact-form-7-css' href='../wp-content/plugins/contact-form-7/includes/css/styles.css' media='all' />
-    <link rel='stylesheet' id='app-css' href='../wp-content/themes/mlp/dist/styles/app.css' media='all' />
-    <link rel='stylesheet' id='cf7cf-style-css' href='../wp-content/plugins/cf7-conditional-fields/style.css' media='all' />
+    <link rel='stylesheet' id='contact-form-7-css' href='https://mln.finance/wp-content/plugins/contact-form-7/includes/css/styles.css' media='all' />
+    <link rel='stylesheet' id='app-css' href='https://mln.finance/wp-content/themes/mlp/dist/styles/app.css' media='all' />
+    <link rel='stylesheet' id='cf7cf-style-css' href='https://mln.finance/wp-content/plugins/cf7-conditional-fields/style.css' media='all' />
     <script src="../wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
     <script src="../wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
     <link rel="https://api.w.org/" href="../wp-json/wp-json.html" />
@@ -212,9 +184,9 @@
         y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "oy2b0hvrin");
     </script>
-    <link rel="icon" href="../wp-content/uploads/2024/05/cropped-favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" href="../wp-content/uploads/2024/05/cropped-favicon-192x192.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="../wp-content/uploads/2024/05/cropped-favicon-180x180.png" />
+    <link rel="icon" href="https://mln.finance/wp-content/uploads/2024/05/cropped-favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://mln.finance/wp-content/uploads/2024/05/cropped-favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://mln.finance/wp-content/uploads/2024/05/cropped-favicon-180x180.png" />
     <meta name="msapplication-TileImage" content="https://mln.finance/wp-content/uploads/2024/05/cropped-favicon-270x270.png" />
     <style id="wp-custom-css">
       /* Approach page one-off font size */
@@ -366,16 +338,6 @@
               <ul class="header__utility-list bare-list">
                 <li class="header__utility-item">
                   <a href="https://user.ambersgate-global.ltd/en/login" target="_self" class="header__utility-link">Investor Login</a>
-                </li>
-				<li class="header__utility-item">
-                  <select id="languageDropdown" onchange="translateLanguage()">
-					<option value="">🌍 Select Language</option>
-					<option value="en">🇬🇧 English</option>
-					<option value="pl">🇵🇱 Polish</option>
-					<option value="ru">🇷🇺 Russian</option>
-					<option value="es">🇪🇸 Spanish</option>
-					<option value="de">🇩🇪 German</option>
-				</select>
                 </li>
               </ul>
             </div>
@@ -983,30 +945,6 @@
       };
     </script>
     <script src="https://mln.finance/wp-content/plugins/cf7-conditional-fields/js/scripts.js" id="wpcf7cf-scripts-js"></script>
-	<script>
-		function translateLanguage() {
-			var selectedLanguage = document.getElementById("languageDropdown").value;
-			var googleTranslateDropdown = document.querySelector(".goog-te-combo");
-
-			if (!googleTranslateDropdown) {
-				console.error("Google Translate dropdown not found. Ensure the Translate script has loaded.");
-				return;
-			}
-
-			googleTranslateDropdown.value = selectedLanguage;
-			googleTranslateDropdown.dispatchEvent(new Event("change"));
-		}
-
-		// Wait for Google Translate to load before enabling the dropdown
-		window.addEventListener("load", function () {
-			setTimeout(() => {
-				if (!document.querySelector(".goog-te-combo")) {
-					console.error("Google Translate not loaded. It might be blocked by a browser extension.");
-				}
-			}, 3000);
-		});
-
-	</script>
 
   </body>
 </html>
