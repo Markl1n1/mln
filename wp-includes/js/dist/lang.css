@@ -81,6 +81,11 @@ html, body {
     transition: background 0.3s;
     width: 100%; /* Makes sure items match button width */
 }
+.language-menu li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Add spacing for flags */
 .language-menu a img {
