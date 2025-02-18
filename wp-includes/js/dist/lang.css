@@ -1,49 +1,88 @@
-/* Prevent body and header overflow */
+/* Ensure no overflow on body */
 html, body {
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden; /* Prevents horizontal scroll */
     margin: 0;
     padding: 0;
 }
 
-/* Ensure header stays inside viewport */
+/* Ensure header stays within viewport */
 .header__utility-menu {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     white-space: nowrap;
-    overflow: hidden; /* Ensure no extra width */
+    overflow: visible; /* Allows dropdown to be visible */
 }
 
-/* Fix language dropdown overflow */
+/* Fix Language Dropdown */
 .language-dropdown {
     position: relative;
     display: inline-block;
     margin-left: 10px;
 }
 
-/* Language dropdown menu */
+/* Style the Selected Language Button */
+.selected-language {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    padding: 8px 10px;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected-language img {
+    width: 20px;
+    height: 14px;
+    margin-right: 5px;
+}
+
+/* Dropdown Menu */
 .language-menu {
-    display: none;
+    display: none; /* Hidden by default */
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 120px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
     list-style: none;
+    min-width: 120px;
     z-index: 1000;
-    overflow: hidden;
 }
 
-/* Fix language dropdown width */
+/* Fix dropdown width */
 .language-menu li {
     padding: 5px 10px;
     white-space: nowrap;
 }
 
-/* Fix dropdown hover issue */
+.language-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    padding: 8px 10px;
+    transition: background 0.3s;
+}
+
+.language-menu a:hover {
+    background: #f4f4f4;
+}
+
+/* Ensure images do not distort */
+.language-menu img {
+    width: 20px;
+    height: 14px;
+    margin-right: 8px;
+}
+
+/* Show dropdown on hover */
 .language-dropdown:hover .language-menu {
     display: block;
 }
