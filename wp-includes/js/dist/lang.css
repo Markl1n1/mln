@@ -1,72 +1,35 @@
-/* Language dropdown styling */
-  .language-dropdown {
+/* Prevent body overflow */
+html, body {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure header stays inside viewport */
+.header__utility-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    white-space: nowrap; /* Avoid unintended line breaks */
+}
+
+/* Ensure dropdown does not overflow */
+.language-dropdown {
     position: relative;
     display: inline-block;
     margin-left: 20px;
-  }
+    max-width: 150px; /* Adjust width if needed */
+}
 
-  .selected-language {
+.language-menu {
+    max-width: 150px; /* Adjust dropdown width */
+    overflow: hidden; /* Prevent extra space */
+}
+
+/* Prevent language dropdown from affecting layout */
+.language-dropdown .selected-language {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    font-size: 16px;
-    color: #333;
-    padding: 10px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s;
-  }
-
-  .selected-language img {
-    width: 20px;
-    height: 14px;
-    margin-right: 8px;
-  }
-
-  .selected-language:hover {
-    background: #f4f4f4;
-  }
-
-  .language-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    list-style: none;
-    min-width: 150px;
-    z-index: 1000;
-  }
-
-  .language-menu li {
-    padding: 5px 0;
-  }
-
-  .language-menu li a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-size: 14px;
-    color: #333;
+    white-space: nowrap; /* Prevent wrapping */
     padding: 8px 10px;
-    transition: background 0.3s;
-  }
-
-  .language-menu li a:hover {
-    background: #f4f4f4;
-  }
-
-  .language-menu img {
-    width: 20px;
-    height: 14px;
-    margin-right: 8px;
-  }
-
-  /* Show dropdown on hover */
-  .language-dropdown:hover .language-menu {
-    display: block;
-  }
+}
