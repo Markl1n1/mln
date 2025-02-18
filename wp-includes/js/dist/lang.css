@@ -1,60 +1,78 @@
-/* Position Language Dropdown outside header */
-.language-dropdown-wrapper {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+/* Ensure language dropdown is positioned correctly */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
 }
 
-/* Dropdown Button */
+/* Selected Language Button */
 .selected-language {
     display: flex;
     align-items: center;
     text-decoration: none;
     font-size: 16px;
     color: #333;
-    padding: 8px 10px;
+    padding: 8px 12px;
     background: white;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-/* Dropdown Menu */
+/* Add some spacing between flag and text */
+.selected-language img {
+    width: 20px;
+    height: 14px;
+    margin-right: 8px;
+}
+
+/* Dropdown Menu - Correct positioning */
 .language-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 100%;  /* Positions dropdown directly below */
+    left: 0;
     background: white;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
     list-style: none;
-    min-width: 120px;
+    min-width: 150px;
+    z-index: 1000;
+    border: 1px solid #ddd;
 }
 
-/* Dropdown Menu Items */
+/* Make sure dropdown doesn't expand weirdly */
 .language-menu li {
-    padding: 5px 10px;
-    white-space: nowrap;
+    padding: 5px 0;
 }
 
+/* Dropdown Links */
 .language-menu a {
     display: flex;
     align-items: center;
     text-decoration: none;
     font-size: 14px;
     color: #333;
-    padding: 8px 10px;
+    padding: 10px 15px;
     transition: background 0.3s;
 }
 
+/* Add spacing between flag and text */
+.language-menu a img {
+    width: 22px;
+    height: 16px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+/* Hover effect */
 .language-menu a:hover {
     background: #f4f4f4;
 }
 
-/* Show Dropdown on Hover */
+/* Show dropdown when hovering */
 .language-dropdown:hover .language-menu {
     display: block;
 }
