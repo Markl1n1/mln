@@ -38,7 +38,6 @@ html, body {
     transition: background 0.3s;
     z-index: 1001; /* Ensure button stays above */
     position: relative;
-    min-width: 120px; /* Ensures button has a defined width */
 }
 
 /* Spacing for flag */
