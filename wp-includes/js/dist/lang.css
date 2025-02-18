@@ -77,7 +77,7 @@ html, body {
     text-decoration: none;
     font-size: 14px;
     color: #333;
-    padding: 10px auto;
+    padding: 10px 0;
     transition: background 0.3s;
     width: 100%; /* Makes sure items match button width */
 }
