@@ -26,6 +26,7 @@ html, body {
 .selected-language {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Ensures text & flag are spaced */
     text-decoration: none;
     font-size: 16px;
     color: #333;
@@ -37,6 +38,7 @@ html, body {
     transition: background 0.3s;
     z-index: 1001; /* Ensure button stays above */
     position: relative;
+    min-width: 120px; /* Ensures button has a defined width */
 }
 
 /* Spacing for flag */
@@ -57,14 +59,14 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 5px 0;
     list-style: none;
-    min-width: 150px;
+    width: 100%; /* Matches dropdown width to selected language button */
     z-index: 1002; /* Ensures menu stays on top */
     border: 1px solid #ddd;
 }
 
-/* Ensure dropdown doesn’t extend page width */
+/* Ensure dropdown items match button width */
 .language-menu li {
-    padding: 5px 0;
+    width: 100%;
 }
 
 /* 🛠️ Dropdown Links */
@@ -76,7 +78,7 @@ html, body {
     color: #333;
     padding: 10px 15px;
     transition: background 0.3s;
-    z-index: 1003;
+    width: 100%; /* Makes sure items match button width */
 }
 
 /* Add spacing for flags */
@@ -87,7 +89,7 @@ html, body {
     border-radius: 2px;
 }
 
-/* Hover Effect */
+/* 🛠️ Hover Effect */
 .language-menu a:hover {
     background: #f4f4f4;
 }
