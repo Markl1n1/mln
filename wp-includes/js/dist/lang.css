@@ -1,6 +1,7 @@
 /* 🛠️ Prevent Body & Header Overflow */
 html, body {
     overflow-x: hidden; /* Prevents unnecessary horizontal scroll */
+    overflow-y: hidden; /* Fixes vertical scroll */
     margin: 0;
     padding: 0;
 }
@@ -9,7 +10,7 @@ html, body {
 .header__utility-menu {
     display: flex;
     align-items: center;
-	justify-content: center;
+    justify-content: center;
     flex-wrap: nowrap;
     white-space: nowrap;
     overflow: visible; /* Allows dropdown to be visible */
@@ -19,7 +20,7 @@ html, body {
 .language-dropdown {
     position: relative;
     display: inline-block;
-	width: 74px;
+    width: 74px;
     margin-left: 10px;
     z-index: 1000; /* Keeps it on top */
 }
@@ -28,7 +29,7 @@ html, body {
 .selected-language {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures text & flag are spaced */
+    justify-content: space-between;
     text-decoration: none;
     font-size: 16px;
     color: #333;
@@ -58,11 +59,10 @@ html, body {
     background: white;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 5px 0;
-	width: 74px;
+    padding: 0; /* Remove extra space causing vertical scroll */
+    width: 74px;
     list-style: none;
     z-index: 1002; /* Ensures menu stays on top */
-
 }
 
 /* Ensure dropdown items match button width */
@@ -77,21 +77,24 @@ html, body {
     text-decoration: none;
     font-size: 14px;
     color: #333;
-    padding: 10px 0;
+    padding: 5px 0; /* Reduce padding to prevent scroll */
     transition: background 0.3s;
-    width: 100%; /* Makes sure items match button width */
+    width: 100%; /* Ensures items match button width */
 }
+
+/* Center content inside links */
 .language-menu li a {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 8px 0; /* Ensure height remains consistent */
 }
 
 /* Add spacing for flags */
 .language-menu a img {
     width: 22px;
     height: 16px;
-    margin-right: 10px;
+    margin-right: 5px; /* Reduce margin */
     border-radius: 2px;
 }
 
