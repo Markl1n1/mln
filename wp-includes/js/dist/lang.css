@@ -1,11 +1,28 @@
-/* Ensure language dropdown is positioned correctly */
+/* 🛠️ Prevent Body & Header Overflow */
+html, body {
+    overflow-x: hidden; /* Prevents unnecessary horizontal scroll */
+    margin: 0;
+    padding: 0;
+}
+
+/* 🛠️ Ensure Header Utility Menu Stays in Bounds */
+.header__utility-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: visible; /* Allows dropdown to be visible */
+}
+
+/* 🛠️ Fix Language Dropdown */
 .language-dropdown {
     position: relative;
     display: inline-block;
     margin-left: 10px;
+    z-index: 1000; /* Keeps it on top */
 }
 
-/* Selected Language Button */
+/* 🛠️ Selected Language Button */
 .selected-language {
     display: flex;
     align-items: center;
@@ -18,37 +35,39 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    z-index: 1001; /* Ensure button stays above */
+    position: relative;
 }
 
-/* Add some spacing between flag and text */
+/* Spacing for flag */
 .selected-language img {
     width: 20px;
     height: 14px;
     margin-right: 8px;
 }
 
-/* Dropdown Menu - Correct positioning */
+/* 🛠️ Dropdown Menu */
 .language-menu {
     display: none;
     position: absolute;
-    top: 100%;  /* Positions dropdown directly below */
+    top: 100%;
     left: 0;
     background: white;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 5px 0;
     list-style: none;
     min-width: 150px;
-    z-index: 1000;
+    z-index: 1002; /* Ensures menu stays on top */
     border: 1px solid #ddd;
 }
 
-/* Make sure dropdown doesn't expand weirdly */
+/* Ensure dropdown doesn’t extend page width */
 .language-menu li {
     padding: 5px 0;
 }
 
-/* Dropdown Links */
+/* 🛠️ Dropdown Links */
 .language-menu a {
     display: flex;
     align-items: center;
@@ -57,9 +76,10 @@
     color: #333;
     padding: 10px 15px;
     transition: background 0.3s;
+    z-index: 1003;
 }
 
-/* Add spacing between flag and text */
+/* Add spacing for flags */
 .language-menu a img {
     width: 22px;
     height: 16px;
@@ -67,12 +87,20 @@
     border-radius: 2px;
 }
 
-/* Hover effect */
+/* Hover Effect */
 .language-menu a:hover {
     background: #f4f4f4;
 }
 
-/* Show dropdown when hovering */
+/* 🛠️ Fix: Prevent Scroll & Ensure Menu Stays on Top */
 .language-dropdown:hover .language-menu {
     display: block;
+}
+
+/* 🛠️ Fix Dropdown Overlapping with Scrollbars */
+.language-dropdown-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1005; /* Ensures it stays on top of all elements */
 }
