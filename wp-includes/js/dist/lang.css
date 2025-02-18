@@ -18,6 +18,7 @@ html, body {
 .language-dropdown {
     position: relative;
     display: inline-block;
+	width: 74px;
     margin-left: 10px;
     z-index: 1000; /* Keeps it on top */
 }
