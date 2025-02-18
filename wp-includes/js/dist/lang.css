@@ -130,7 +130,9 @@ img, video, svg {
     --li4-space-sm: 1.125rem;
   }
 }
-
+.header__utility-list {
+	display: flex;
+}
 /* buttons */
 .li4-btn {
   position: relative;
