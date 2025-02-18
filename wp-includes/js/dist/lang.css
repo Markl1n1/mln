@@ -1,7 +1,6 @@
 /* 🛠️ Prevent Body & Header Overflow */
 html, body {
     overflow-x: hidden; /* Prevents unnecessary horizontal scroll */
-    overflow-y: hidden; /* Fixes vertical scroll */
     margin: 0;
     padding: 0;
 }
