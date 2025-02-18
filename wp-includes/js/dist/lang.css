@@ -1,27 +1,12 @@
-/* Ensure no overflow on body */
-html, body {
-    overflow-x: hidden; /* Prevents horizontal scroll */
-    margin: 0;
-    padding: 0;
+/* Position Language Dropdown outside header */
+.language-dropdown-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
-/* Ensure header stays within viewport */
-.header__utility-menu {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    overflow: visible; /* Allows dropdown to be visible */
-}
-
-/* Fix Language Dropdown */
-.language-dropdown {
-    position: relative;
-    display: inline-block;
-    margin-left: 10px;
-}
-
-/* Style the Selected Language Button */
+/* Dropdown Button */
 .selected-language {
     display: flex;
     align-items: center;
@@ -31,31 +16,25 @@ html, body {
     padding: 8px 10px;
     background: white;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-}
-
-.selected-language img {
-    width: 20px;
-    height: 14px;
-    margin-right: 5px;
 }
 
 /* Dropdown Menu */
 .language-menu {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     background: white;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
     list-style: none;
     min-width: 120px;
-    z-index: 1000;
 }
 
-/* Fix dropdown width */
+/* Dropdown Menu Items */
 .language-menu li {
     padding: 5px 10px;
     white-space: nowrap;
@@ -75,14 +54,7 @@ html, body {
     background: #f4f4f4;
 }
 
-/* Ensure images do not distort */
-.language-menu img {
-    width: 20px;
-    height: 14px;
-    margin-right: 8px;
-}
-
-/* Show dropdown on hover */
+/* Show Dropdown on Hover */
 .language-dropdown:hover .language-menu {
     display: block;
 }
