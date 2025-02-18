@@ -1,131 +1,58 @@
-/* 🛠️ Prevent Body & Header Overflow */
-html, body {
-    overflow-x: hidden; /* Prevents unnecessary horizontal scroll */
-    margin: 0;
-    padding: 0;
-}
-
-/* 🛠️ Ensure Header Utility Menu Stays in Bounds */
-.header__utility-menu {
+/* Language Modal Styles */
+.language-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Transparent dark background */
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    overflow: visible; /* Allows dropdown to be visible */
-}
-.header__utility-list {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	animation: fadeIn 0.5s ease-in-out;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px); /* Slight slide-in effect */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* 🛠️ Fix Language Dropdown */
-.language-dropdown {
-    position: relative;
-    display: inline-block;
-    width: 74px;
-    margin-left: 10px;
-    z-index: 1000; /* Keeps it on top */
 }
 
-/* 🛠️ Selected Language Button */
-.selected-language {
+/* Modal Content */
+.language-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Language Options */
+.language-options {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.language-options li {
+    margin: 10px 0;
+}
+
+.language-options a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     text-decoration: none;
     font-size: 16px;
     color: #333;
-    padding: 8px 12px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-    z-index: 1001; /* Ensure button stays above */
-    position: relative;
-}
-
-/* Spacing for flag */
-.selected-language img {
-    width: 20px;
-    height: 14px;
-    margin-right: 8px;
-}
-
-/* 🛠️ Dropdown Menu */
-.language-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 0; /* Remove extra space causing vertical scroll */
-    width: 74px;
-    list-style: none;
-    z-index: 1002; /* Ensures menu stays on top */
-}
-
-/* Ensure dropdown items match button width */
-.language-menu li {
-    width: 100%;
-}
-
-/* 🛠️ Dropdown Links */
-.language-menu a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-size: 14px;
-    color: #333;
-    padding: 5px 0; /* Reduce padding to prevent scroll */
-    transition: background 0.3s;
-    width: 100%; /* Ensures items match button width */
-}
-
-/* Center content inside links */
-.language-menu li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 0; /* Ensure height remains consistent */
-}
-
-/* Add spacing for flags */
-.language-menu a img {
-    width: 22px;
-    height: 16px;
-    margin-right: 5px; /* Reduce margin */
-    border-radius: 2px;
-}
-
-/* 🛠️ Hover Effect */
-.language-menu a:hover {
+    padding: 10px;
     background: #f4f4f4;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
-/* 🛠️ Fix: Prevent Scroll & Ensure Menu Stays on Top */
-.language-dropdown:hover .language-menu {
-    display: block;
+.language-options a:hover {
+    background: #ddd;
 }
 
-/* 🛠️ Fix Dropdown Overlapping with Scrollbars */
-.language-dropdown-wrapper {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    z-index: 1005; /* Ensures it stays on top of all elements */
+/* Flag Icon */
+.language-options img {
+    width: 25px;
+    height: 16px;
+    margin-right: 10px;
 }

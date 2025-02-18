@@ -1,50 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const selectedLang = document.querySelector(".selected-language");
-    const langMenu = document.querySelector(".language-menu");
-    const langMenuItems = document.querySelectorAll(".language-menu a");
+    const modal = document.getElementById("language-modal");
+    const languageLinks = document.querySelectorAll(".language-options a");
 
-    // Check if a language was previously selected (using localStorage)
-    const storedLang = localStorage.getItem("selectedLang");
-    if (storedLang) {
-        updateSelectedLanguage(storedLang);
+    // Check if a language is already saved in localStorage
+    const savedLang = localStorage.getItem("userLanguage");
+    if (!savedLang) {
+        modal.style.display = "flex"; // Show the modal if no language is saved
+    } else {
+        // Redirect to saved language page if necessary
+        if (!window.location.href.includes(`/${savedLang}/`)) {
+            window.location.href = `https://mln.finance/${savedLang}/`;
+        }
     }
 
-    // Toggle dropdown when clicking the language button
-    selectedLang.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        langMenu.style.display = (langMenu.style.display === "block") ? "none" : "block";
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!selectedLang.contains(event.target) && !langMenu.contains(event.target)) {
-            langMenu.style.display = "none";
-        }
-    });
-
-    // Update selected language on click
-    langMenuItems.forEach(item => {
-        item.addEventListener("click", function (event) {
+    // Handle language selection
+    languageLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
             event.preventDefault();
-            const lang = this.href.split("=")[1]; // Get language code from URL
-            updateSelectedLanguage(lang);
-            localStorage.setItem("selectedLang", lang); // Store in localStorage
-            langMenu.style.display = "none"; // Hide menu after selection
+            const selectedLang = this.getAttribute("data-lang");
+
+            // Save language selection in localStorage
+            localStorage.setItem("userLanguage", selectedLang);
+
+            // Redirect to the corresponding language page
+            window.location.href = `https://mln.finance/${selectedLang}/`;
         });
     });
-
-    function updateSelectedLanguage(lang) {
-        const flagMap = {
-            "en": { src: "https://flagcdn.com/w40/gb.png", text: "English" },
-            "pl": { src: "https://flagcdn.com/w40/pl.png", text: "Polski" },
-            "es": { src: "https://flagcdn.com/w40/es.png", text: "Español" },
-            "de": { src: "https://flagcdn.com/w40/de.png", text: "Deutsch" },
-            "ru": { src: "https://flagcdn.com/w40/ru.png", text: "Русский" }
-        };
-
-        if (flagMap[lang]) {
-            selectedLang.innerHTML = `<img src="${flagMap[lang].src}" alt="${flagMap[lang].text} Flag"> ${flagMap[lang].text}`;
-        }
-    }
 });
