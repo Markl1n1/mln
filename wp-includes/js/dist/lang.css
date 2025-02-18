@@ -56,3 +56,23 @@
     height: 16px;
     margin-right: 10px;
 }
+
+.language-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-btn img {
+    width: 35px; /* Adjust size */
+    height: 35px;
+}
+
+/* Hover effect */
+.language-btn:hover {
+    opacity: 0.7;
+}
