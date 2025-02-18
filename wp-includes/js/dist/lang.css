@@ -59,10 +59,9 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 5px 0;
     list-style: none;
-    width: 100%; /* Matches dropdown width to selected language button */
     z-index: 1002; /* Ensures menu stays on top */
     border: 1px solid #ddd;
-	width: 74px;
+
 }
 
 /* Ensure dropdown items match button width */
