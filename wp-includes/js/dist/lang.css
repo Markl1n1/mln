@@ -1,4 +1,4 @@
-/* Prevent body overflow */
+/* Prevent body and header overflow */
 html, body {
     overflow-x: hidden; /* Hide horizontal scrollbar */
     margin: 0;
@@ -9,27 +9,43 @@ html, body {
 .header__utility-menu {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    white-space: nowrap; /* Avoid unintended line breaks */
+    flex-wrap: nowrap;
+    white-space: nowrap;
+	max-width: 100%;
+    overflow: hidden; /* Ensure no extra width */
 }
 
-/* Ensure dropdown does not overflow */
+/* Fix language dropdown overflow */
 .language-dropdown {
     position: relative;
     display: inline-block;
-    margin-left: 20px;
-    max-width: 150px; /* Adjust width if needed */
+    margin-left: 10px;
 }
 
+/* Language dropdown menu */
 .language-menu {
-    max-width: 150px; /* Adjust dropdown width */
-    overflow: hidden; /* Prevent extra space */
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 120px;
+	max-width: 150px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+    list-style: none;
+    z-index: 1000;
+    overflow: hidden;
 }
 
-/* Prevent language dropdown from affecting layout */
-.language-dropdown .selected-language {
-    display: flex;
-    align-items: center;
-    white-space: nowrap; /* Prevent wrapping */
-    padding: 8px 10px;
+/* Fix language dropdown width */
+.language-menu li {
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+/* Fix dropdown hover issue */
+.language-dropdown:hover .language-menu {
+    display: block;
 }
