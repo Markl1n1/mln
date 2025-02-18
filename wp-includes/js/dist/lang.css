@@ -67,9 +67,6 @@ html, body {
 /* Ensure dropdown items match button width */
 .language-menu li {
     width: 100%;
-	display: flex;
-	justify-content:center;
-	align-items: center;
 }
 
 /* 🛠️ Dropdown Links */
@@ -79,7 +76,7 @@ html, body {
     text-decoration: none;
     font-size: 14px;
     color: #333;
-    padding: 10px 0;
+    padding: 10px auto;
     transition: background 0.3s;
     width: 100%; /* Makes sure items match button width */
 }
