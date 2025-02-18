@@ -138,8 +138,10 @@
     <link rel='stylesheet' id='contact-form-7-css' href='https://mln.finance/wp-content/plugins/contact-form-7/includes/css/styles.css' media='all' />
     <link rel='stylesheet' id='app-css' href='https://mln.finance/wp-content/themes/mlp/dist/styles/app.css' media='all' />
     <link rel='stylesheet' id='cf7cf-style-css' href='https://mln.finance/wp-content/plugins/cf7-conditional-fields/style.css' media='all' />
+	<link rel='stylesheet' id='lang-css' href='https://mln.finance/wp-includes/js/dist/lang.css' media='all' />
     <script src="https://mln.finance/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
     <script src="https://mln.finance/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+	<script src="https://mln.finance/wp-includes/js/dist/lang.js" id="lang-js"></script>
     <link rel="https://api.w.org/" href="https://mln.finance/wp-json/wp-json.html" />
     <link rel="alternate" title="JSON" type="application/json" href="https://mln.finance/wp-json/wp/v2/pages/127.json" />
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mln.finance/xmlrpc.php?rsd" />
@@ -647,6 +649,22 @@
               <li class="menu-item menu-item-type-custom menu-item-object-custom">
                 <a href="https://investor.mlp.com/" target="_blank">Investor Login</a>
               </li>
+			  <!-- Language selection-->
+			  <li class="menu-item menu-item-type-custom menu-item-object-custom">
+				<div class="language-picker language-picker--hide-label js-language-picker" data-trigger-class="li4-btn li4-btn--subtle js-tab-focus">
+				  <form action="" class="language-picker__form">
+					<label for="language-picker-select">Select your language</label>
+					<select name="language-picker-select" id="language-picker-select">
+					  <option lang="en" value="english" selected>English</option>
+					  <option lang="pl" value="polski">Polski</option>
+					  <option lang="sp" value="espanol">Español</option>
+					  <option lang="de" value="deutsch">Deutsch</option>
+					  <option lang="ru" value="russian">Русский</option>
+					</select>
+				  </form>
+				</div>
+              </li>
+			   <!-- Language selection end-->
             </ul>
           </div>
           <div class="footer-col footer-col-mb">
