@@ -9,6 +9,7 @@ html, body {
 .header__utility-menu {
     display: flex;
     align-items: center;
+	justify-content: center;
     flex-wrap: nowrap;
     white-space: nowrap;
     overflow: visible; /* Allows dropdown to be visible */
