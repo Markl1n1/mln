@@ -19,10 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageLinks = document.querySelectorAll(".language-options a");
     const languageBtn = document.getElementById("language-btn");
 
-    // 🛠 Hide modal if the page already has a language in the URL
-    if (currentLang) {
-        modal.style.display = "none"; // Don't show modal if a language is found
-    }
+    // 🛠 Remove auto-show modal logic (Now it only appears on button click)
 
     // Click event to open modal manually (if user clicks the button)
     if (languageBtn) {
