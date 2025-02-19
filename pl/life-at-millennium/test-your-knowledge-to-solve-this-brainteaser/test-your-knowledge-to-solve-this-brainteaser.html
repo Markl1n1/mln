@@ -127,6 +127,18 @@
 
   <body class="mlp_articles-template mlp_articles-template-article-general mlp_articles-template-article-general-php single single-mlp_articles postid-1210 preload" data-template="base.twig" data-theme="" data-id="1210">
     <a class="sr-only sr-only-focusable skip-link uppercase" href="test-your-knowledge-to-solve-this-brainteaser.html#content">Skip to content</a>
+    <!-- Language Selection Modal -->
+    <div id="language-modal" class="language-modal">
+    <div class="language-modal-content">
+    <ul class="language-options">
+    <li><a href="#" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="English Flag"> English</a></li>
+    <li><a href="#" data-lang="pl"><img src="https://flagcdn.com/w40/pl.png" alt="Polish Flag"> Polski</a></li>
+    <li><a href="#" data-lang="sp"><img src="https://flagcdn.com/w40/es.png" alt="Spanish Flag"> Español</a></li>
+    <li><a href="#" data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="German Flag"> Deutsch</a></li>
+    <li><a href="#" data-lang="ru"><img src="https://flagcdn.com/w40/ru.png" alt="Russian Flag"> Русский</a></li>
+    </ul>
+    </div>
+    </div>
 
     
     <header class="header header--normal" data-component="Header">
@@ -248,6 +260,11 @@
                 <li class="header__utility-item">
                   <a href="https://investor.mlp.com/" target="_self" class="header__utility-link">Logowanie Inwestora</a>
                 </li>
+                <li class="header__utility-item">
+					<button id="language-btn" class="language-btn">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120; width:25px;" xml:space="preserve"> <g fill="#0032ff"> <path d="M60 120C26.9 120 0 93.1 0 60S26.9 0 60 0s60 26.9 60 60-26.9 60-60 60zM60 5C29.7 5 5 29.7 5 60s24.7 55 55 55 55-24.7 55-55S90.3 5 60 5z"/> <path d="M60 120c-19.3 0-34.4-26.4-34.4-60S40.7 0 60 0s34.4 26.4 34.4 60-15.1 60-34.4 60zM60 5C43.8 5 30.5 29.7 30.5 60s13.2 55 29.5 55 29.5-24.7 29.5-55S76.2 5 60 5z"/> <path d="M12.2 25.6h95.6v5H12.2zM12.2 89.5h95.6v5H12.2zM2.5 57.5h115v5H2.5z"/> <path d="M57.5 2.5h5v115h-5z"/> </g> </svg>
+					</button>
+				</li>
               </ul>
             </div>
           </nav>
