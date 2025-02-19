@@ -33,6 +33,9 @@
 .language-options li {
     margin: 10px 0;
 }
+#language-modal {
+    display: none; /* Ensures it starts hidden */
+}
 
 .language-options a {
     display: flex;
