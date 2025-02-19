@@ -10,17 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let pathSegments = window.location.pathname.split("/").filter(segment => segment.trim() !== "");
     let currentLang = supportedLanguages.includes(pathSegments[0]) ? pathSegments[0] : null;
 
-    // Check if a language is already saved in localStorage
-    const savedLang = localStorage.getItem("userLanguage");
-    const firstVisit = localStorage.getItem("firstVisit"); // New flag to track the first visit
+    // Check if the user is on mln.finance/en/ (exactly)
+    const isOnEnglishHomePage = window.location.pathname === "/en/" || window.location.pathname === "/en";
 
-    // 🛠 Fix: Set "firstVisit" when the modal is first shown
-    if (!savedLang && !currentLang && !firstVisit) {
-        modal.style.display = "flex"; // Show modal only once
-        localStorage.setItem("firstVisit", "true"); // Prevent it from appearing again
+    // Show modal on all pages EXCEPT `mln.finance/en/`
+    if (!isOnEnglishHomePage) {
+        modal.style.display = "flex";
     }
 
-    // Click event to open modal manually
+    // Click event to open modal manually (if user clicks the button)
     if (languageBtn) {
         languageBtn.addEventListener("click", function () {
             modal.style.display = "flex";
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Save language selection in localStorage
             localStorage.setItem("userLanguage", selectedLang);
-            localStorage.setItem("firstVisit", "true"); // Ensure modal never reappears
 
             let baseUrl = window.location.origin; // e.g., "https://mln.finance"
             let path = window.location.pathname;
