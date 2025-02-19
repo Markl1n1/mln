@@ -19,12 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageLinks = document.querySelectorAll(".language-options a");
     const languageBtn = document.getElementById("language-btn");
 
-    // 🛠 Remove auto-show modal logic (Now it only appears on button click)
+    // 🛠 Ensure the modal is HIDDEN on page load
+    if (modal) {
+        modal.style.display = "none"; // Make sure it's hidden initially
+    }
 
     // Click event to open modal manually (if user clicks the button)
     if (languageBtn) {
         languageBtn.addEventListener("click", function () {
-            modal.style.display = "flex";
+            if (modal) {
+                modal.style.display = "flex"; // Show the modal when button is clicked
+            }
         });
     }
 
@@ -42,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Remove existing language from path if present
             let newPathSegments = pathSegments.filter(segment => !supportedLanguages.includes(segment));
 
-            // If selectedLang is "/", redirect to the root
+            // If selectedLang is "/", just close the modal
             if (selectedLang === "/") {
-                modal.style.display = "none"; // Just close the modal if selecting root
+                modal.style.display = "none"; // Just close the modal
                 return;
             }
 
