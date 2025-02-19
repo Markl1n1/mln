@@ -43,10 +43,19 @@ document.addEventListener("DOMContentLoaded", function () {
             let pathSegments = path.split("/").filter(segment => !supportedLanguages.includes(segment));
 
             // If selectedLang is "/", redirect to the root
-            let newUrl = selectedLang === "/" ? `${baseUrl}/` : `${baseUrl}/${selectedLang}/${pathSegments.join("/")}`;
+            if (selectedLang === "/") {
+                modal.style.display = "none"; // Just close the modal if selecting root
+                return;
+            }
 
-            // Remove any accidental double slashes
-            newUrl = newUrl.replace(/([^:]\/)\/+/g, "$1");
+            // If already on the selected language, just close the modal
+            if (selectedLang === currentLang) {
+                modal.style.display = "none";
+                return;
+            }
+
+            // Construct new URL with the selected language
+            let newUrl = `${baseUrl}/${selectedLang}/${pathSegments.join("/")}`.replace(/([^:]\/)\/+/g, "$1");
 
             // Redirect to the new URL
             window.location.href = newUrl;
