@@ -6,10 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Define supported languages
     const supportedLanguages = ["en", "pl", "es", "de", "ru"];
 
+    // Get current language from URL
+    let pathSegments = window.location.pathname.split("/").filter(segment => segment.trim() !== "");
+    let currentLang = supportedLanguages.includes(pathSegments[0]) ? pathSegments[0] : null;
+
     // Check if a language is already saved in localStorage
     const savedLang = localStorage.getItem("userLanguage");
-    if (!savedLang) {
-        modal.style.display = "flex"; // Show modal on first visit
+
+    // Only show the modal if there's no language in the URL AND no saved language
+    if (!savedLang && !currentLang) {
+        modal.style.display = "flex"; // Show modal on first visit when no language is in the URL
     }
 
     // Click event to open modal when button is clicked
@@ -31,15 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("userLanguage", selectedLang);
 
             let baseUrl = window.location.origin; // e.g., "https://mln.finance"
-            let path = window.location.pathname;  // e.g., "/en/contact-us.html"
+            let path = window.location.pathname;
 
-            // Split the path into segments
-            let pathSegments = path.split("/").filter(segment => segment.trim() !== ""); // Remove empty segments
-
-            // Check if the first segment is a language code
-            if (supportedLanguages.includes(pathSegments[0])) {
-                pathSegments.shift(); // Remove existing language
-            }
+            // Remove existing language from path if present
+            let pathSegments = path.split("/").filter(segment => !supportedLanguages.includes(segment));
 
             // If selectedLang is "/", redirect to the root
             let newUrl = selectedLang === "/" ? `${baseUrl}/` : `${baseUrl}/${selectedLang}/${pathSegments.join("/")}`;
