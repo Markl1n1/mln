@@ -16,7 +16,7 @@ body {
     justify-content: center;
 }
 .svg-color {
-	fill: var(--primary-color)
+	fill: #0032ff;
 }
 /* Modal Content */
 .language-modal-content {
