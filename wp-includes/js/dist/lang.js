@@ -23,8 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
             // Save language selection in localStorage
             localStorage.setItem("userLanguage", selectedLang);
 
-            // Redirect to the corresponding language page
-            window.location.href = `https://mln.finance/${selectedLang}/`;
+            // Modify URL to insert language code in the path
+            let currentUrl = window.location.href;
+            let baseUrl = window.location.origin; // e.g., "https://mln.finance"
+            let path = window.location.pathname;  // e.g., "/contact-us/contact-us.html"
+
+            // Ensure the language is not already in the path
+            let pathSegments = path.split("/").filter(segment => segment.trim() !== ""); // Remove empty segments
+            if (!pathSegments.includes(selectedLang)) {
+                pathSegments.unshift(selectedLang); // Add language at the beginning
+            }
+
+            // Construct the new URL
+            let newUrl = `${baseUrl}/${pathSegments.join("/")}`;
+
+            // Redirect to new URL
+            window.location.href = newUrl;
         });
     });
 });
