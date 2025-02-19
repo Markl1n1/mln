@@ -12,14 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Check if a language is already saved in localStorage
     const savedLang = localStorage.getItem("userLanguage");
-    const firstVisit = localStorage.getItem("firstVisit"); // New flag to prevent showing modal after redirect
+    const firstVisit = localStorage.getItem("firstVisit"); // New flag to track the first visit
 
-    // Show modal only if there's no language in URL AND it's their first visit
+    // 🛠 Fix: Set "firstVisit" when the modal is first shown
     if (!savedLang && !currentLang && !firstVisit) {
-        modal.style.display = "flex"; // Show modal on first visit
+        modal.style.display = "flex"; // Show modal only once
+        localStorage.setItem("firstVisit", "true"); // Prevent it from appearing again
     }
 
-    // Click event to open modal when button is clicked
+    // Click event to open modal manually
     if (languageBtn) {
         languageBtn.addEventListener("click", function () {
             modal.style.display = "flex";
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Save language selection in localStorage
             localStorage.setItem("userLanguage", selectedLang);
-            localStorage.setItem("firstVisit", "true"); // Mark that the user has picked a language
+            localStorage.setItem("firstVisit", "true"); // Ensure modal never reappears
 
             let baseUrl = window.location.origin; // e.g., "https://mln.finance"
             let path = window.location.pathname;
