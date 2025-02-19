@@ -1,20 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const baseUrl = window.location.origin; // e.g., "https://mln.finance"
+    const path = window.location.pathname;  // e.g., "/"
+    
+    // Define supported languages
+    const supportedLanguages = ["en", "pl", "es", "de", "ru"];
+    
+    // Check if the user is on the root page ("/") without a language
+    if (path === "/") {
+        window.location.href = `${baseUrl}/en/`; // Redirect to English version
+        return; // Stop further execution
+    }
+
     const modal = document.getElementById("language-modal");
     const languageLinks = document.querySelectorAll(".language-options a");
     const languageBtn = document.getElementById("language-btn");
 
-    // Define supported languages
-    const supportedLanguages = ["en", "pl", "es", "de", "ru"];
-
     // Get current language from URL
-    let pathSegments = window.location.pathname.split("/").filter(segment => segment.trim() !== "");
+    let pathSegments = path.split("/").filter(segment => segment.trim() !== "");
     let currentLang = supportedLanguages.includes(pathSegments[0]) ? pathSegments[0] : null;
 
-    // Check if the user is on mln.finance/en/ (exactly)
-    const isOnEnglishHomePage = window.location.pathname === "/en/" || window.location.pathname === "/en";
-
     // Show modal on all pages EXCEPT `mln.finance/en/`
-    if (!isOnEnglishHomePage) {
+    if (currentLang !== "en") {
         modal.style.display = "flex";
     }
 
@@ -35,9 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Save language selection in localStorage
             localStorage.setItem("userLanguage", selectedLang);
-
-            let baseUrl = window.location.origin; // e.g., "https://mln.finance"
-            let path = window.location.pathname;
 
             // Remove existing language from path if present
             let pathSegments = path.split("/").filter(segment => !supportedLanguages.includes(segment));
