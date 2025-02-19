@@ -5,8 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Define supported languages
     const supportedLanguages = ["en", "pl", "es", "de", "ru"];
     
-    // Check if the user is on the root page ("/") without a language
-    if (path === "/") {
+    // Get path segments and check if language exists
+    let pathSegments = path.split("/").filter(segment => segment.trim() !== "");
+    let currentLang = supportedLanguages.includes(pathSegments[0]) ? pathSegments[0] : null;
+
+    // If no language is in the URL, redirect to English
+    if (!currentLang) {
         window.location.href = `${baseUrl}/en/`; // Redirect to English version
         return; // Stop further execution
     }
@@ -15,13 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageLinks = document.querySelectorAll(".language-options a");
     const languageBtn = document.getElementById("language-btn");
 
-    // Get current language from URL
-    let pathSegments = path.split("/").filter(segment => segment.trim() !== "");
-    let currentLang = supportedLanguages.includes(pathSegments[0]) ? pathSegments[0] : null;
-
-    // Show modal on all pages EXCEPT `mln.finance/en/`
-    if (currentLang !== "en") {
-        modal.style.display = "flex";
+    // 🛠 Hide modal if the page already has a language in the URL
+    if (currentLang) {
+        modal.style.display = "none"; // Don't show modal if a language is found
     }
 
     // Click event to open modal manually (if user clicks the button)
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("userLanguage", selectedLang);
 
             // Remove existing language from path if present
-            let pathSegments = path.split("/").filter(segment => !supportedLanguages.includes(segment));
+            let newPathSegments = pathSegments.filter(segment => !supportedLanguages.includes(segment));
 
             // If selectedLang is "/", redirect to the root
             if (selectedLang === "/") {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Construct new URL with the selected language
-            let newUrl = `${baseUrl}/${selectedLang}/${pathSegments.join("/")}`.replace(/([^:]\/)\/+/g, "$1");
+            let newUrl = `${baseUrl}/${selectedLang}/${newPathSegments.join("/")}`.replace(/([^:]\/)\/+/g, "$1");
 
             // Redirect to the new URL
             window.location.href = newUrl;
