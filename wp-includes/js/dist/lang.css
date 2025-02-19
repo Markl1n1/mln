@@ -59,6 +59,7 @@
 
 .language-btn {
     background: none;
+	margin-left: 10px;
     border: none;
     cursor: pointer;
     padding: 5px;
@@ -75,4 +76,8 @@
 /* Hover effect */
 .language-btn:hover {
     opacity: 0.7;
+}
+.header__utility-item {
+	display: flex;
+	align-items: center;
 }
