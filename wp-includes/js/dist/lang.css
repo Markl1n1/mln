@@ -1,4 +1,7 @@
 /* Language Modal Styles */
+body {
+	overflow-x: none;
+}
 .language-modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -12,7 +15,9 @@
     align-items: center;
     justify-content: center;
 }
-
+.svg-color {
+	fill: var(--primary-color)
+}
 /* Modal Content */
 .language-modal-content {
     background: white;
