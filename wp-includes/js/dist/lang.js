@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const path = window.location.pathname;  // e.g., "/"
     
     // Define supported languages
-    const supportedLanguages = ["en", "pl", "es", "de", "ru"];
+    const supportedLanguages = ["en", "pl", "sp", "de", "ru"];
     
     // Get path segments and check if language exists
     let pathSegments = path.split("/").filter(segment => segment.trim() !== "");
