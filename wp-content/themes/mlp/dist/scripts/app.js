@@ -11116,7 +11116,7 @@
               r && (t = r);
             }
             if ("IFRAME" === t.nodeName && !Mr(t.getAttribute("src") || ""))
-              throw new Error("The player element passed isn’t a Vimeo embed.");
+              throw new Error("The player element passed isn&rsquo;t a Vimeo embed.");
             if (eo.has(t)) return eo.get(t);
             (this._window = t.ownerDocument.defaultView),
               (this.element = t),
