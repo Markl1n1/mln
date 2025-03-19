@@ -9065,15 +9065,15 @@ blockquote.article-quote {
 }
 .stackedCards__card-trigger[aria-expanded="true"]
   .stackedCards__card-trigger-icon
-  #vertical-line,
+  .vertical-line,
 .stackedCards__card-trigger[aria-expanded="true"]
   .stackedCards__card-trigger-icon
-  #horizontal-line-1 {
+  .horizontal-line-1 {
   display: none;
 }
 .stackedCards__card-trigger[aria-expanded="true"]
   .stackedCards__card-trigger-icon
-  #horizontal-line-2 {
+  .horizontal-line-2 {
   d: path("M0 7.5L15 7.5");
 }
 .stackedCards__card-l-col {
@@ -9913,13 +9913,13 @@ blockquote.article-quote {
 .leadershipGrid[data-skin="white"] {
   background-color: var(--white);
 }
-.leadershipGrid[data-skin="white"] .leadershipGrid__trigger-icon #vertical-line,
+.leadershipGrid[data-skin="white"] .leadershipGrid__trigger-icon .vertical-line,
 .leadershipGrid[data-skin="white"]
   .leadershipGrid__trigger-icon
-  #horizontal-line-1,
+  .horizontal-line-1,
 .leadershipGrid[data-skin="white"]
   .leadershipGrid__trigger-icon
-  #horizontal-line-2 {
+  .horizontal-line-2 {
   stroke: var(--primary-color);
 }
 .leadershipGrid[data-skin="light-blue"] {
@@ -9927,13 +9927,13 @@ blockquote.article-quote {
 }
 .leadershipGrid[data-skin="light-blue"]
   .leadershipGrid__trigger-icon
-  #vertical-line,
+  .vertical-line,
 .leadershipGrid[data-skin="light-blue"]
   .leadershipGrid__trigger-icon
-  #horizontal-line-1,
+  .horizontal-line-1,
 .leadershipGrid[data-skin="light-blue"]
   .leadershipGrid__trigger-icon
-  #horizontal-line-2 {
+  .horizontal-line-2 {
   stroke: var(--primary-color);
 }
 .leadershipGrid[data-skin="navy"] {
@@ -9983,15 +9983,15 @@ blockquote.article-quote {
 }
 .leadershipGrid__trigger[aria-expanded="true"]
   .leadershipGrid__trigger-icon
-  #vertical-line,
+  .vertical-line,
 .leadershipGrid__trigger[aria-expanded="true"]
   .leadershipGrid__trigger-icon
-  #horizontal-line-1 {
+  .horizontal-line-1 {
   display: none;
 }
 .leadershipGrid__trigger[aria-expanded="true"]
   .leadershipGrid__trigger-icon
-  #horizontal-line-2 {
+  .horizontal-line-2 {
   d: path("M0 7.5L15 7.5");
 }
 .leadershipGrid__grid {
