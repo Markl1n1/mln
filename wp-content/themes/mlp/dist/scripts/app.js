@@ -18246,7 +18246,7 @@
               value: function () {
                 this.isInternalReferrer
                   ? this.referrer.includes(
-                      "https://mln.global/people/leadership",
+                      "https://mln.legal/people/leadership",
                     )
                     ? (this.closeBtn.href = this.leadershipLP)
                     : (this.closeBtn.href = "javascript:history.back()")
@@ -18263,7 +18263,7 @@
                   e.clientX <= t.left + t.width) ||
                   (this.isInternalReferrer
                     ? this.referrer.includes(
-                        "https://mln.global/people/leadership",
+                        "https://mln.legal/people/leadership",
                       )
                       ? (window.location.href = this.leadershipLP)
                       : history.back()

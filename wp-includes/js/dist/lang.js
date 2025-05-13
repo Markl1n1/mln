@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const baseUrl = window.location.origin; // e.g., "https://mln.global"
+  const baseUrl = window.location.origin; // e.g., "https://mln.legal"
   const path = window.location.pathname; // e.g., "/"
 
   // Define supported languages
