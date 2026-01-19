@@ -10073,7 +10073,8 @@ blockquote.article-quote {
   width: 7.625rem;
   flex: 0 0 7.625rem;
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
+  justify-content: center;
   display: none;
   margin-top: auto;
   border-radius: 0.625rem;
