@@ -10073,18 +10073,19 @@ blockquote.article-quote {
   width: 7.625rem;
   flex: 0 0 7.625rem;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   display: none;
   margin-top: auto;
   border-radius: 0.625rem;
   overflow: hidden;
+  padding: 0.75rem;
 }
 .leadershipGrid__card-image > img[src] {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
   transition: none;
 }
 .leadershipGrid__card-body {
